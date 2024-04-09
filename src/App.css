@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.app {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.board {
+    width: calc(64px * 8);
+    height: calc(64px * 8);
+    display: flex;
+    flex-wrap: wrap;
+    border: 2rem solid #4a4d60;
+}
+
+.cell {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.figure {
+    width: 48px;
+    height: 48px;
+    position: relative;
+    filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.45));
+}
+
+.figure.black {
+    color: black;
+    background: transparent;
+}
+
+.figure.white {
+    color: white;
+    background: transparent;
+}
+
+.black {
+    background: #717792;
+}
+
+.white {
+    background: #e1e3e6;
+}
