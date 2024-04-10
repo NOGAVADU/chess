@@ -10,7 +10,7 @@ const CellC: FC<CellProps> = ({cell}) => {
     return (
         <div className={['cell', cell.color].join(' ')}>
             {cell.figure?.logo &&
-                    <FontAwesomeIcon className={['figure', cell.figure.color].join(' ')} icon={cell.figure.logo}/>
+                <FontAwesomeIcon className={['figure', cell.figure.color].join(' ')} icon={cell.figure.logo}/>
             }
         </div>
     );

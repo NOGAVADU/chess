@@ -31,6 +31,7 @@
     width: 48px;
     height: 48px;
     position: relative;
+    -webkit-filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.45));
     filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.45));
 }
 
