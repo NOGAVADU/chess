@@ -9,4 +9,13 @@ export class Bishop extends Figure {
         this.logo = logo;
         this.name = FiguresNames.BISHOP
     }
+
+    canMove(target: Cell): boolean {
+        if (!super.canMove(target)) {
+            return false
+        } else if (this.cell.isEmptyDiagonal(target)) {
+            return true
+        }
+        return false
+    }
 }

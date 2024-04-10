@@ -4,11 +4,20 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 interface CellProps {
     cell: Cell;
+    selected: boolean;
+    click: (cell: Cell) => void;
 }
 
-const CellC: FC<CellProps> = ({cell}) => {
+const CellC: FC<CellProps> = ({cell, selected, click}) => {
     return (
-        <div className={['cell', cell.color].join(' ')}>
+        <div onClick={() => click(cell)}
+             className={[
+                 'cell',
+                 cell.color, selected ? 'selected' : '',
+                 cell.available && cell.figure ? 'attack' : ''
+             ].join(' ')}
+        >
+            {cell.available && !cell.figure && <div className={'available'}></div>}
             {cell.figure?.logo &&
                 <FontAwesomeIcon className={['figure', cell.figure.color].join(' ')} icon={cell.figure.logo}/>
             }
