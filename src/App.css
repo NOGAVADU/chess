@@ -6,6 +6,7 @@
 .app {
     width: 100%;
     height: 100vh;
+    background: rgba(113, 119, 146, 0.79);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,6 +18,14 @@
     display: flex;
     flex-wrap: wrap;
     border: 2rem solid #4a4d60;
+}
+
+.board__title {
+    font-size: 2rem;
+    padding: 0.5rem 2rem;
+    border-radius: 1rem 1rem 0 0;
+    display: flex;
+    background: #4a4d60 ;
 }
 
 .cell {
@@ -32,7 +41,7 @@
     height: 3.2rem;
     position: relative;
     filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.45));
-    transition: all 0.2s;
+    transition: transform 0.2s;
 }
 
 .figure.black {
@@ -45,14 +54,23 @@
     background: transparent;
 }
 
-.figure:hover {
+
+.selected .figure{
+    transform: scale(1.3);
+    filter: drop-shadow(0 0 7px rgba(0, 0, 0, 0.55));
+}
+
+.selected .figure:hover{
+    transform: scale(1.3);
+}
+
+.accessibly:not(.selected) .figure:hover{
     cursor: pointer;
     transform: scale(1.1);
 }
 
-.selected .figure {
-    transform: scale(1.3);
-    filter: drop-shadow(0 0 7px rgba(0, 0, 0, 0.55));
+.accessibly .figure {
+    drop-shadow(0 0 3px rgba(0, 0, 0, 0.45));
 }
 
 .available {
@@ -75,7 +93,41 @@
 }
 
 .attack .figure{
+    cursor: pointer;
     filter: drop-shadow(0 0 7px rgba(255, 0, 0, 0.48));
+}
+
+.attack .figure:hover {
+    transform: scale(1.1);
+}
+
+.lost__container{
+    margin-top: 3.3rem;
+    padding: 2rem 1rem;
+    border-radius: 0 1rem 1rem 0;
+    height: calc(4rem * 8);
+    flex-direction: column;
+    background: #4a4d60 ;
+}
+
+.lost {
+
+}
+
+.lost__title{
+    font-size: 1.5rem;
+}
+
+.lost__el-container{
+    height: calc(4rem * 4);
+    width: calc(4rem * 4);
+    display: grid;
+    grid-template: 1.6rem 1.6rem/ repeat(8, 1.6rem);
+}
+
+.lost__figure{
+    width: 1.6rem;
+    height: 1.6rem;
 }
 
 .black {
